@@ -1,7 +1,7 @@
 
 # mpv-hero
 
-mpv media player from zero to hero. Get quickly started with the popular mpv media player.
+mpv media player from zero to hero. Get quickly and easily started with the popular mpv media player.
 
 So far mpv-hero is only available for Windows.
 
