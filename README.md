@@ -1,14 +1,15 @@
 
 # mpv-hero
 
-mpv media player from zero to hero.
+mpv media player from zero to hero. Get quickly started with the popular mpv media player.
+
+So far mpv-hero is only available for Windows.
 
 mpv-hero consists of:
 
-- Original/Vanilla mpv.
-- Some user scripts and tools that make mpv more feature rich, useful and beginner friendly.
-  There is a feature rich and easy to use context menu.
-- Reasonable default values.
+- Original/Vanilla mpv ([Website](https://mpv.io), [Download](https://github.com/stax76/awesome-mpv?tab=readme-ov-file#installationdownload)).
+- Popular mpv user scripts and tools that enhance mpv.
+- mpv and user script config files.
 
 Included user scripts and tools:
 
@@ -17,5 +18,10 @@ Included user scripts and tools:
 - [thumbfast](https://github.com/po5/thumbfast) - High-performance on-the-fly thumbnailer script.
 - [recent-menu](https://github.com/natural-harmonia-gropius/recent-menu) - Showing recently played files.
 - [command_palette](https://github.com/stax76/mpv-scripts) - A searchable menu.
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) - A feature-rich command-line audio/video downloader.
 
 ![](screenshot.webp)
+
+For a full list of available mpv user scripts and tools visit:
+
+https://github.com/stax76/awesome-mpv
