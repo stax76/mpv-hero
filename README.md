@@ -25,3 +25,11 @@ Included user scripts and tools:
 For a full list of available mpv user scripts and tools visit:
 
 https://github.com/stax76/awesome-mpv
+
+
+Other projects from me
+----------------------
+
+A list of my other projects can be found here:
+
+https://stax76.github.io/software-list
