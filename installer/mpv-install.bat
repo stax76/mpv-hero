@@ -12,6 +12,9 @@ call :ensure_vista
 :: Make sure the script is running as admin
 call :ensure_admin
 
+:: Check for presence of and register VapourSynth in %PATH% if not already registered
+call :set_vs_path
+
 :: Command line arguments to use when launching mpv from a file association
 set mpv_args=
 
@@ -215,6 +218,28 @@ exit 0
 		echo associations on Windows XP, right click on a video file and use "Open with...".
 		call :die
 	)
+	goto :EOF
+
+:set_vs_path
+	set "REL_DIR=..\portable_config\VapourSynth"
+	for %%I in ("%~dp0%REL_DIR%") do set "TARGET_DIR=%%~fI"
+	if not exist "%TARGET_DIR%" (
+		echo Directory not found:
+		echo %TARGET_DIR%
+		goto :EOF
+	)
+
+	REM ---- Check if already in USER PATH (safe, delimiter-aware) ----
+	echo ;%PATH%; | find /I ";%TARGET_DIR%;" >nul
+	if not errorlevel 1 (
+		echo Path already exists in PATH:
+		echo %TARGET_DIR%
+		goto :EOF
+	)
+
+	REM ---- Add to USER PATH permanently ----
+	setx PATH "%PATH%;%TARGET_DIR%" >nul
+
 	goto :EOF
 
 :reg
