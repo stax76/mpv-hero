@@ -228,18 +228,11 @@ exit 0
 		echo %TARGET_DIR%
 		goto :EOF
 	)
-
-	REM ---- Check if already in USER PATH (safe, delimiter-aware) ----
 	echo ;%PATH%; | find /I ";%TARGET_DIR%;" >nul
 	if not errorlevel 1 (
-		echo Path already exists in PATH:
-		echo %TARGET_DIR%
 		goto :EOF
 	)
-
-	REM ---- Add to USER PATH permanently ----
 	setx PATH "%PATH%;%TARGET_DIR%" >nul
-
 	goto :EOF
 
 :reg
