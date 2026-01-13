@@ -1,0 +1,34 @@
+alang = en,eng,en_us
+allow-unsafe-commands=yes
+autofit = 60%x60%
+autoload-files=yes
+border=yes
+correct-downscaling=yes
+deband=yes
+force-window = yes
+gpu-api=vulkan
+hwdec = auto
+hwdec-codecs=all
+idle = no
+input-ar-delay = 200
+input-ar-rate = 20
+input-doubleclick-time=250
+keep-open=no
+libplacebo-opts=preset=high_quality,deband=yes,deband_preset=default,peak_detection_preset=high_quality,color_map_preset=high_quality
+osd-duration = 2000
+osd-playing-msg = ${filename}
+profile-restore=copy
+reset-on-next-file = video-zoom,video-pan-y,pause
+save-position-on-quit=yes
+screen = 0
+screenshot-dir = ~~desktop/
+screenshot-template = mpv screenshot %p %f
+sid = no
+sigmoid-upscaling=yes
+slang = en,eng
+snap-window = yes
+sub-auto = fuzzy
+title = ${filename}
+title-bar = no
+vo=gpu
+#-next
