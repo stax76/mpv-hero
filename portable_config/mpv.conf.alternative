@@ -20,6 +20,7 @@ osd-playing-msg = ${filename}
 profile-restore=copy
 reset-on-next-file = video-zoom,video-pan-y,pause
 save-position-on-quit=yes
+save-watch-history=yes
 screen = 0
 screenshot-dir = ~~desktop/
 screenshot-template = mpv screenshot %p %f
@@ -32,3 +33,4 @@ title = ${filename}
 title-bar = no
 vo=gpu
 #-next
+write-filename-in-watch-later-config=yes

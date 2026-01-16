@@ -1,0 +1,212 @@
+#############################
+# Internal default bindings #
+#############################
+
+################
+# Context Menu #
+################
+
+Ctrl+o      script-message-to dialog open           #menu: Open > Files...
+Ctrl+O      script-message-to dialog open-folder    #menu: Open > Folder...
+_           script-message-to dialog open append    #menu: Open > Add To Playlist...
+_           ignore                                  #menu: Open > -
+_           script-message-to dialog open bd-iso    #menu: Open > Bluray ISO...
+_           script-message-to dialog open dvd-iso   #menu: Open > DVD ISO...
+_           ignore                                  #menu: Open > -
+Ctrl+v      script-message-to dialog open-clipboard #menu: Open > Clipboard
+_           ignore                                  #menu: Open > -
+Ctrl+R      script-binding recentmenu/open          #menu: Open > Recently Played #@recent
+_           ignore                                  #menu: -
+
+Space       cycle pause                             #menu: Play  #@state=(idle_active and 'disabled' or (pause or 'hidden'))
+Space       cycle pause                             #menu: Pause #@state=((idle_active or pause) and 'hidden')
+Ctrl+s      stop                                    #menu: Stop  #@state=(idle_active and 'disabled')
+_           ignore                                  #menu: -
+Alt+`       script-binding vapoursynth_fps_0        #menu: VapourSynth > Off
+Alt+1       script-binding vapoursynth_fps_30       #menu: VapourSynth > 30fps
+Alt+2       script-binding vapoursynth_fps_60       #menu: VapourSynth > 60fps
+Alt+3       script-binding vapoursynth_fps_72       #menu: VapourSynth > 72fps
+Alt+4       script-binding vapoursynth_fps_90       #menu: VapourSynth > 90fps
+Alt+5       script-binding vapoursynth_fps_120      #menu: VapourSynth > 120fps
+Alt+6       script-binding vapoursynth_fps_144      #menu: VapourSynth > 144fps
+_           ignore                                  #menu: -
+
+.           playlist-next                           #menu: Navigate > Next File
+,           playlist-prev                           #menu: Navigate > Previous File
+_           ignore                                  #menu: Navigate > -
+d           add chapter  1                          #menu: Navigate > Next Chapter
+a           add chapter -1                          #menu: Navigate > Previous Chapter
+_           ignore                                  #menu: Navigate > -
+w           frame-step                              #menu: Navigate > Jump Next Frame
+s           frame-back-step                         #menu: Navigate > Jump Previous Frame
+_           ignore                                  #menu: Navigate > -
+Right       seek  5                                 #menu: Navigate > Jump 5 sec forward
+Left        seek -5                                 #menu: Navigate > Jump 5 sec backward
+_           ignore                                  #menu: Navigate > -
+Up          seek  30                                #menu: Navigate > Jump 30 sec forward
+Down        seek -30                                #menu: Navigate > Jump 30 sec backward
+_           ignore                                  #menu: Navigate > -
+Ctrl+Right  seek  300                               #menu: Navigate > Jump 5 min forward
+Ctrl+Left   seek -300                               #menu: Navigate > Jump 5 min backward
+_           ignore                                  #menu: -
+                 
+_           ignore                                  #menu: Chapters #@chapters
+_           ignore                                  #menu: Tracks #@tracks
+_           ignore                                  #menu: Editions #@editions
+_           ignore                                  #menu: Playlist #@playlist
+_           ignore                                  #menu: -
+KP8         cycle video                             #menu: Video > Tracks #@tracks/video
+_           script-message-to dialog open add-video #menu: Video > Add Tracks... #@state=(idle_active and 'disabled')
+_           ignore                                  #menu: Video > -
+_           cycle video                             #menu: Video > Next Track
+Ctrl+1      add contrast -1                         #menu: Video > Decrease Contrast
+Ctrl+2      add contrast  1                         #menu: Video > Increase Contrast
+_           ignore                                  #menu: Video > -
+Ctrl+3      add brightness -1                       #menu: Video > Decrease Brightness
+Ctrl+4      add brightness  1                       #menu: Video > Increase Brightness
+_           ignore                                  #menu: Video > -
+Ctrl+5      add gamma -1                            #menu: Video > Decrease Gamma
+Ctrl+6      add gamma  1                            #menu: Video > Increase Gamma
+_           ignore                                  #menu: Video > -
+Ctrl+7      add saturation -1                       #menu: Video > Decrease Saturation
+Ctrl+8      add saturation  1                       #menu: Video > Increase Saturation
+_           ignore                                  #menu: Video > -
+p           async screenshot                        #menu: Video > Take Screenshot #@state=(tonumber(vid) or 'disabled')
+P           async screenshot video                  #menu: Video > Take Screenshot (without subtitles) #@state=(tonumber(vid) or 'disabled')
+_           ignore                                  #menu: Video > -
+_           set video-aspect-override 16:9          #menu: Video > Aspect Ratio > 16:9
+_           set video-aspect-override 4:3           #menu: Video > Aspect Ratio > 4:3
+_           set video-aspect-override 2.35:1        #menu: Video > Aspect Ratio > 2.35:1
+_           set video-aspect-override -1            #menu: Video > Aspect Ratio > Reset
+Alt+a           cycle-values video-aspect-override 16:9 4:3 2.35:1 -1
+Ctrl+q      script-binding uosc/stream-quality      #menu: Video > Stream Quality
+Ctrl+r      cycle-values video-rotate 90 180 270 0  #menu: Video > Rotate Video
+D           cycle deband                            #menu: Video > Toggle Deband #@state=(deband and 'checked')
+Alt+d       cycle deinterlace                       #menu: Video > Toggle Deinterlace #@state=(deinterlace and 'checked')
+Ctrl+I      cycle icc-profile-auto                  #menu: Video > Toggle Auto ICC Profile #@state=(icc_profile_auto and 'checked')
+
+KP7         cycle audio                             #menu: Audio > Tracks #@tracks/audio
+_           script-message-to dialog open add-audio #menu: Audio > Add Tracks... #@state=(idle_active and 'disabled')
+_           ignore                                  #menu: Audio > -
+Ctrl+d      add audio-delay  0.1                    #menu: Audio > Delay +0.1
+Ctrl+D      add audio-delay -0.1                    #menu: Audio > Delay -0.1
+_           ignore                                  #menu: Audio > -
+_           ignore                                  #menu: Audio > Devices #@audio-devices
+                 
+j           cycle sub                               #menu: Subtitle > Main Subtitle #@tracks/sub
+v           cycle sub-visibility                    #menu: Subtitle > Main Subtitle Options > Visibility #@state=(sub_visibility and 'checked')
+_           ignore                                  #menu: Subtitle > Main Subtitle Options > -
+z           add sub-delay -0.1                      #menu: Subtitle > Main Subtitle Options > Delay -0.1
+Z           add sub-delay  0.1                      #menu: Subtitle > Main Subtitle Options > Delay +0.1
+_           ignore                                  #menu: Subtitle > Main Subtitle Options > -
+r           add sub-pos -1                          #menu: Subtitle > Main Subtitle Options > Move Up
+R           add sub-pos +1                          #menu: Subtitle > Main Subtitle Options > Move Down
+Alt+j       cycle secondary-sid                     #menu: Subtitle > Secondary Subtitle #@tracks/sub-secondary
+Alt+v       cycle secondary-sub-visibility          #menu: Subtitle > Secondary Subtitle Options > Visibility #@state=(secondary_sub_visibility and 'checked')
+_           ignore                                  #menu: Subtitle > Secondary Subtitle Options > -
+Alt+z       add secondary-sub-delay -0.1            #menu: Subtitle > Secondary Subtitle Options > Delay -0.1
+Alt+Z       add secondary-sub-delay  0.1            #menu: Subtitle > Secondary Subtitle Options > Delay +0.1
+_           ignore                                  #menu: Subtitle > Secondary Subtitle Options > -
+Alt+r       add secondary-sub-pos -1                #menu: Subtitle > Secondary Subtitle Options > Move Up
+Alt+R       add secondary-sub-pos +1                #menu: Subtitle > Secondary Subtitle Options > Move Down
+_           script-message-to dialog open add-sub   #menu: Subtitle > Add Tracks... #@state=(idle_active and 'disabled')
+_           ignore                                  #menu: Subtitle > -
+F           add sub-scale -0.1                      #menu: Subtitle > Decrease Subtitle Font Size
+G           add sub-scale  0.1                      #menu: Subtitle > Increase Subtitle Font Size
+_           ignore                                  #menu: -
+                 
+Ctrl++      add video-zoom  0.1                     #menu: Pan & Scan > Increase Size
+Ctrl+-      add video-zoom -0.1                     #menu: Pan & Scan > Decrease Size
+_           ignore                                  #menu: Pan & Scan > -
+Ctrl+KP4    add video-pan-x -0.01                   #menu: Pan & Scan > Move Left
+Ctrl+KP6    add video-pan-x  0.01                   #menu: Pan & Scan > Move Right
+_           ignore                                  #menu: Pan & Scan > -
+Ctrl+KP8    add video-pan-y -0.01                   #menu: Pan & Scan > Move Up
+Ctrl+KP2    add video-pan-y  0.01                   #menu: Pan & Scan > Move Down
+_           ignore                                  #menu: Pan & Scan > -
+Alt+w           add panscan -0.1                        #menu: Pan & Scan > Decrease Height
+Alt+W           add panscan  0.1                        #menu: Pan & Scan > Increase Height
+_           ignore                                  #menu: Pan & Scan > -
+Ctrl+BS     set video-zoom 0; set video-pan-x 0; set video-pan-y 0 #menu: Pan & Scan > Reset
+
+[           multiply speed 1/1.1                    #menu: Speed > -10%
+]           multiply speed 1.1                      #menu: Speed > +10%
+_           ignore                                  #menu: Speed > -
+{           multiply speed 0.5                      #menu: Speed > Half
+}           multiply speed 2.0                      #menu: Speed > Double
+_           ignore                                  #menu: Speed > -
+_           set speed 0.5                           #menu: Speed > 0.5x
+_           set speed 0.75                          #menu: Speed > 0.75x
+_           set speed 1.0                           #menu: Speed > 1.0x
+_           set speed 1.25                          #menu: Speed > 1.25x
+_           set speed 1.5                           #menu: Speed > 1.5x
+_           set speed 2.0                           #menu: Speed > 2.0x
+_           ignore                                  #menu: Speed > -
+BS          set speed 1                             #menu: Speed > Reset
+                 
+=           add volume  2                           #menu: Volume > Up
+-           add volume -2                           #menu: Volume > Down
+_           ignore                                  #menu: Volume > -
+m           cycle mute                              #menu: Volume > Mute #@state=(mute and 'checked')
+_           ignore                                  #menu: -
+Ctrl+p  script-binding select/menu					#menu: View > Command Palette
+F1      script-binding select/select-playlist       #menu: View > Select On-Screen Menu > Select Playlist
+F2      script-binding select/select-sid            #menu: View > Select On-Screen Menu > Select Subtitle Track
+F3      script-binding select/select-secondary-sid  #menu: View > Select On-Screen Menu > Select Secondary Subtitle
+F4      script-binding select/select-aid            #menu: View > Select On-Screen Menu > Select Audio Track
+F5      script-binding select/select-vid            #menu: View > Select On-Screen Menu > Select Video Track
+F6      script-binding select/select-track          #menu: View > Select On-Screen Menu > Select Track
+F7      script-binding select/select-chapter        #menu: View > Select On-Screen Menu > Select Chapter
+F8      script-binding select/select-subtitle-line  #menu: View > Select On-Screen Menu > Select Subtitle Line
+F9      script-binding select/select-audio-device   #menu: View > Select On-Screen Menu > Select Audio Device
+F10     script-binding select/select-binding        #menu: View > Select On-Screen Menu > Select Bindings
+F11     script-binding select/show-properties       #menu: View > Select On-Screen Menu > Select Properties
+_           ignore                                  #menu: -
+_       script-binding uosc/items                   #menu: View > Playlist
+p       show-progress                               #menu: View > Progress
+c       script-binding uosc/chapters                #menu: View > Chapters
+alt+i   script-binding uosc/keybinds                #menu: View > Bindings
+`       script-binding console/enable               #menu: View > Console
+_       ignore                                      #menu: View > -
+Alt++   add window-scale 0.1                        #menu: View > Zoom > Enlarge
+Alt+-   add window-scale -0.1                       #menu: View > Zoom > Shrink
+_       ignore                                      #menu: View > Zoom > -
+Alt+0   set window-scale 0.5                        #menu: View > Zoom > 50 %
+Alt+1   set window-scale 1.0                        #menu: View > Zoom > 100 %
+Alt+2   set window-scale 2.0                        #menu: View > Zoom > 200 %
+Alt+3   set window-scale 3.0                        #menu: View > Zoom > 300 %
+_       ignore                                      #menu: View > -
+t       script-binding stats/display-stats-toggle   #menu: View > Toggle Statistics
+O       no-osd cycle-values osd-level 3 1           #menu: View > Toggle Time OSD
+Del     script-binding osc/visibility               #menu: View > Toggle OSC Visibility
+
+
+Esc     cycle fullscreen                            #menu: Window > Fullscreen #@state=(fullscreen and 'checked')
+Ctrl+S  screenshot window                           #menu: Window > Take Screenshot #@state=(tonumber(vid) or 'disabled')
+_       script-message-to dialog save screenshot    #menu: Window > Export Screenshot File #@state=(tonumber(vid) or 'disabled')
+_       ignore                                      #menu: Window > -
+b       cycle border                                #menu: Window > Toggle Border #@state=(border and 'checked')
+Ctrl+t  cycle ontop                                 #menu: Window > Toggle On Top #@ontop:check #@state=(ontop and 'checked')
+
+_       script-message-to dialog set-clipboard ${path}      #menu: Tools > Copy File Path
+_       script-message-to dialog set-clipboard ${metadata}  #menu: Tools > Copy Metadata
+_       ignore                                      #menu: Tools > -
+_       playlist-shuffle                            #menu: Tools > Shuffle Playlist
+_       script-message-to dialog save playlist      #menu: Tools > Export Playlist
+_       ignore                                      #menu: Tools > -
+l       ab-loop                                     #menu: Tools > Set/clear A-B loop points
+L       cycle-values loop-file inf no               #menu: Tools > Toggle infinite file looping
+Ctrl+h  cycle-values hwdec auto no                  #menu: Tools > Toggle Hardware Decoding
+e       script-binding uosc/show-in-directory       #menu: Tools > Show in directory
+Ctrl+f  script-binding uosc/open-config-directory   #menu: Tools > Open config directory
+U       run powershell -Command "Start-Process 'updater.bat' -Verb RunAs" #menu: Tools > Update MPV
+u       script-binding uosc/update                  #menu: Tools > Update uosc
+_       ignore                                      #menu: Tools > -
+alt+>   script-binding uosc/delete-file-next        #menu: Tools > Delete > Delete file & Next
+alt+<   script-binding uosc/delete-file-prev        #menu: Tools > Delete > Delete file & Prev
+alt+esc script-binding uosc/delete-file-quit        #menu: Tools > Delete > Delete file & Quit
+_       ignore                                      #menu: Tools > -
+q       quit-watch-later                            #menu: Tools > Exit Watch Later
+_       ignore                                      #menu: -
+_       ignore                                      #menu: Profiles #@profiles
+MBTN_LEFT_DBL  cycle fullscreen     # toggle fullscreen
