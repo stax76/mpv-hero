@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <InputDefaultBindingsFixApplied>true</InputDefaultBindingsFixApplied>
+    <ShowMenuFixApplied>true</ShowMenuFixApplied>
+    <MenuUpdateVersion>0</MenuUpdateVersion>
+    <Volume>100</Volume>
+    <RecentFiles>
+        <string>C:\Users\Crowley\Downloads\TV\Percy Jackson and the Olympians\S02E05 - We Check In to C.C.'s Spa &amp; Resort WEBDL-2160p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\The Curse of Oak Island\S13E09 - So Close, Yet Sonar HDTV-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\Fringe\S04E09 - Enemy of My Enemy Bluray-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\Bob's Burgers\S16E10 - Heist Things Are Heist HDTV-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\The Simpsons\S37E12 - ¡The Fall Guy-Yi-Yi! HDTV-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\The Night Manager\S01E01 - Episode 1 WEBDL-2160p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\Movies\Five Nights at Freddy's 2 (2025)\Five Nights at Freddy's 2 (2025) Web H.265 2160p Dolby Atmos.mp4</string>
+        <string>C:\Users\Crowley\Downloads\TV\Robin.Hood.S01E10.One.Enemy.Falls.Another.Rises.2160p.AMZN.WEB-DL.DDP5.1.H.265-BLOOM\Robin.Hood.S01E10.One.Enemy.Falls.Another.Rises.2160p.AMZN.WEB-DL.DDP5.1.H.265-BLOOM.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\Big Fat Quiz\S2025E02 - Big Fat Quiz of the Year 2025 WEBDL-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\The Big Fat Quiz of Telly\SE - HDTV-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\Stranger Things\S05E05 - Chapter Five - Shock Jock WEBDL-2160p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\Shoresy\S05E02 - The Great One HDTV-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\Adventure Time - Fionna &amp; Cake\S02E08 - The Insect That Sang WEBDL-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\Adventure Time - Fionna &amp; Cake\S02E10 - The Bear and the Rose HDTV-1080p.mkv</string>
+        <string>C:\Users\Crowley\Downloads\TV\The Curse of Oak Island\S13E08 - Into the Fold HDTV-1080p.mkv</string>
+    </RecentFiles>
+    <WindowLocation>
+        <X>0</X>
+        <Y>0</Y>
+    </WindowLocation>
+    <WindowPosition>
+        <X>1906</X>
+        <Y>996</Y>
+    </WindowPosition>
+    <WindowSize>
+        <Width>2932</Width>
+        <Height>1649</Height>
+    </WindowSize>
+    <AudioDevice />
+    <ConfigEditorSearch>Playback:</ConfigEditorSearch>
+    <Mute>no</Mute>
+    <StartupFolder />
+</AppSettings>
